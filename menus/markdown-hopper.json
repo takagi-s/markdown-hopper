@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle markdown-hopper",
+        "command": "markdown-hopper:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "markdown-hopper",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "markdown-hopper:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
