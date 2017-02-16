@@ -4,5 +4,99 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.markdown-hopper {
+div.markdown-hopper-toc-view {
+
+  ol {
+    height: 75% !important;
+    max-height: 500px !important;
+
+    li.level {
+      background-color: inherit;
+      padding-top: 5px !important;
+      padding-right: 0px !important;
+      padding-bottom: 5px !important;
+
+      div.markdown-hopper-content {
+        display: flex;
+        div.markdown-hopper-header {
+          width: 400px;
+          height: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          span {
+            vertical-align: middle;
+          }
+        }
+        div.markdown-hopper-hint-line {
+          padding-left: 5px;
+          text-align: right;
+          span {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          span.markdown-hopper-level-hint {
+            color: inherit;
+            float: left;
+            display: inline-block;
+            width: 80px;
+            height: 100%;
+            padding-left: 5px;
+          }
+        }
+      }
+
+      div.markdown-hopper-padding {
+        position: absolute;
+        width: 20px;
+        height: 27px;
+
+        span {
+          display: inline-block;
+          width: 20px;
+          height: 100%;
+          border-right-width: 1px;
+          border-right-style: dotted;
+          border-right-color: darken(@text-color, 10%);
+          text-align: center;
+          position: relative;
+          top: -5px;
+        }
+      }
+    }
+    li.level1 {
+      div.markdown-hopper-header {
+        padding-left: 0px;
+      }
+    }
+    li.level2 {
+      div.markdown-hopper-header {
+        padding-left: 20px;
+      }
+    }
+    li.level3 {
+      div.markdown-hopper-header {
+        padding-left: 40px;
+      }
+    }
+    li.level4 {
+      div.markdown-hopper-header {
+        padding-left: 60px;
+      }
+    }
+    li.level5 {
+      div.markdown-hopper-header {
+        padding-left: 80px;
+      }
+    }
+    li.level6 {
+      div.markdown-hopper-header {
+        padding-left: 100px;
+      }
+    }
+    li.search-result {
+      div.markdown-hopper-hint-line {
+        text-align: right;
+      }
+    }
+  }
 }

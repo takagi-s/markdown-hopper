@@ -5,7 +5,6 @@
   "description": "A utility package for Markdown files.",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "markdown-hopper:toggle"
   },
   "repository": "https://github.com/atom/markdown-hopper",
   "license": "MIT",
