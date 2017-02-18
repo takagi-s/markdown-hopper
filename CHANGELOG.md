@@ -1,7 +1,8 @@
-## 0.1.0 - First Release
+
+## 0.1.0 - First Release (Proto)
 * TOC Modal (TOC: _Table Of Contents_)
   - Jump to selected section
-  - Fold child sections
+  - Fold child sections -> バグってた
   - Search sections
 * Link creation
   - Relative link to FILE / SECTION HEADER
@@ -13,4 +14,5 @@
   - Forward (Jump to relative linked FILE / SECTION HEADER)
   - Backward (Jump to where you have lastly jumped from)
 * Notification
-* Every bug NOT fixed (Sorry, but it's **buggy**)
+
+### 0.1.1

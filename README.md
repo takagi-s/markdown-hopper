@@ -2,6 +2,7 @@
 
 - [Japanese description](#header-39tjwjka11)
   - [機能の概要](#header-d6bfhu8bsu)
+    - [見出しの一覧機能](#header-zvtcstfhvq)
     - [リンク機能](#header-dzrw8t2b7w)
     - [Markdownファイルの見出し行へのアンカー付加機能](#header-ky2ul2m3t9)
     - [Markdownファイルのリンク付き目次の生成機能](#header-pli2mfqq42)
@@ -26,6 +27,10 @@
 ### 機能の概要
 
 主に以下の機能を提供します。
+
+<a name="header-zvtcstfhvq" class="markdown-hopper"></a>
+#### 見出しの一覧機能
+- Markdownファイル内の見出し一覧を表示（ `` ）
 
 <a name="header-dzrw8t2b7w" class="markdown-hopper"></a>
 #### リンク機能
@@ -78,6 +83,7 @@
 
 | Commands        | Default Keybinds  | Despcription | Demo links |
 | :------------- | :-------------   | :-------- | :------- |
+| ` ` | ` ` |  |  |
 | `create-table-of-contents` | `(Ctrl-c Ctrl-m) Ctrl-l Ctrl-t` |  | [Demo](#header-5xtrgleocc) |
 | `paste-table-of-contents` | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t` |  | [Demo](#header-2ramzssjsu) |
 | `jump-forward` | `(Ctrl-c Ctrl-m) Ctrl-o` |   |  |
@@ -114,17 +120,12 @@
 
 <a name="header-l2widefy0k" class="markdown-hopper"></a>
 ## English description
-(Coming soon)
+Coming soon
 
 <a name="header-5xtrgleocc" class="markdown-hopper"></a>
 ## Demo
 
-<a name="header-8ep2tij037" class="markdown-hopper"></a>
-### Generate Table of Contents
-
-Use `markdown-hopper:create-table-of-contents` and `markdown-hopper:paste-table-of-contents` .
-
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+### 見出しの一覧機能
 
 <a name="header-det3zykzms" class="markdown-hopper"></a>
 ## Milestones
