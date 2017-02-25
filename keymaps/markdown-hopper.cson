@@ -16,7 +16,6 @@
     "ctrl-c ctrl-m ctrl-p ctrl-p": "markdown-hopper:paste-http-link",
     # Jump
     "ctrl-c ctrl-o": "markdown-hopper:jump-forward",
-    "ctrl-c o": "markdown-hopper:jump-backward",
     # Fold
     "ctrl-c ctrl-m ctrl-i": "markdown-hopper:toggle-fold",
     "ctrl-c ctrl-m ctrl-f ctrl-a": "markdown-hopper:toggle-fold-anchors",
@@ -26,6 +25,8 @@
     "ctrl-c ctrl-m ctrl-m ctrl-c": "markdown-hopper:checkbox-utility",
   },
   "atom-workspace": {
+    # Jump
+    "ctrl-c o": "markdown-hopper:jump-backward",
     "ctrl-c ctrl-m ctrl-l ctrl-f": "markdown-hopper:create-link-to-file",
     "ctrl-c ctrl-m ctrl-s": "markdown-hopper-calendar:shortcut-to-create-file",
     "ctrl-c ctrl-m ctrl-n": "markdown-hopper-calendar:take-oneline-note-or-todo",
