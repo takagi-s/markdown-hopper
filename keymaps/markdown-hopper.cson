@@ -2,37 +2,38 @@
   "atom-workspace atom-text-editor": {
     # TOC view
     "ctrl-c ctrl-m ctrl-t": "markdown-hopper:toggle-markdown-toc-view",
-    # Link
+    # Link creation
     "ctrl-c ctrl-m ctrl-l ctrl-f": "markdown-hopper:create-link-to-file",
     "ctrl-c ctrl-m ctrl-l ctrl-h": "markdown-hopper:create-link-to-header",
     "ctrl-c ctrl-m ctrl-l ctrl-t": "markdown-hopper:create-table-of-contents",
+    # Paste link
     "ctrl-c ctrl-m ctrl-p ctrl-l": "markdown-hopper:paste-link",
+    "ctrl-c ctrl-m ctrl-p ctrl-p": "markdown-hopper:paste-http-link",
     "ctrl-c ctrl-m ctrl-p ctrl-t ctrl-t": "markdown-hopper:paste-table-of-contents",
     "ctrl-c ctrl-m ctrl-p ctrl-t 2": "markdown-hopper:paste-table-of-contents-level-2",
     "ctrl-c ctrl-m ctrl-p ctrl-t 3": "markdown-hopper:paste-table-of-contents-level-3",
     "ctrl-c ctrl-m ctrl-p ctrl-t 4": "markdown-hopper:paste-table-of-contents-level-4",
     "ctrl-c ctrl-m ctrl-p ctrl-t 5": "markdown-hopper:paste-table-of-contents-level-5",
     "ctrl-c ctrl-m ctrl-p ctrl-t 6": "markdown-hopper:paste-table-of-contents-level-6",
-    "ctrl-c ctrl-m ctrl-p ctrl-p": "markdown-hopper:paste-http-link",
     # Jump
     "ctrl-c ctrl-o": "markdown-hopper:jump-forward",
+    "ctrl-c o": "markdown-hopper:jump-backward",
     # Fold
     "ctrl-c ctrl-m ctrl-i": "markdown-hopper:toggle-fold",
     "ctrl-c ctrl-m ctrl-f ctrl-a": "markdown-hopper:toggle-fold-anchors",
     "ctrl-c ctrl-m ctrl-f ctrl-l": "markdown-hopper:fold-links",
     "ctrl-c ctrl-m ctrl-f ctrl-f": "markdown-hopper:fold-all",
-    # Utility
-    "ctrl-c ctrl-m ctrl-m ctrl-c": "markdown-hopper:checkbox-utility",
   },
   "atom-workspace": {
-    # Jump
-    "ctrl-c o": "markdown-hopper:jump-backward",
-    "ctrl-c ctrl-m ctrl-l ctrl-f": "markdown-hopper:create-link-to-file",
-    "ctrl-c ctrl-m ctrl-s": "markdown-hopper-calendar:shortcut-to-create-file",
-    "ctrl-c ctrl-m ctrl-n": "markdown-hopper-calendar:take-oneline-note-or-todo",
+    "ctrl-c ctrl-m ctrl-l ctrl-f": "markdown-hopper:create-link-to-file"
   },
-  ".markdown-hopper-toc-view": {
-    "ctrl-i": "markdown-hopper:toc-view-fold-header",
+  '.markdown-hopper atom-text-editor': {
     "ctrl-c ctrl-m ctrl-f ctrl-c": "markdown-hopper:focus-current-header"
-  },
+    # Emacs like
+    'ctrl-m': 'core:confirm'
+    'ctrl-n': 'core:move-down'
+    'ctrl-p': 'core:move-up'
+    'ctrl-g': 'core:cancel'
+    "ctrl-i": "markdown-hopper:toc-view-fold-header",
+  }
 }

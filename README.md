@@ -1,21 +1,16 @@
-
 # markdown-hopper package
 
 - [Japanese description](#header-39tjwjka11)
   - [機能の概要](#header-d6bfhu8bsu)
     - [見出しの一覧機能](#header-zvtcstfhvq)
-    - [リンク機能](#header-dzrw8t2b7w)
-    - [Markdownファイルの見出し行へのアンカー付加機能](#header-ky2ul2m3t9)
-    - [Markdownファイルのリンク付き目次の生成機能](#header-pli2mfqq42)
-    - [Markdownリンクの生成機能](#header-tgplipsna0)
-    - [カーソル行の、以下のMarkdownリンクのリンク先への1コマンドでのジャンプ機能](#header-pbh5il843j)
+    - [リンク生成機能](#header-dzrw8t2b7w)
+    - [リンクジャンプ機能](#header-oznz3wf6t9)
     - [その他のユーティリティ](#header-0jhai0cq1b)
   - [プレフィックスキーとデフォルトキーバインドの体系](#header-nok6mp31cp)
-  - [コマンドとデフォルトキーバインド](#header-fxnd5cn22h)
+  - [コマンドとデフォルトキーバインド一覧](#header-fxnd5cn22h)
   - [設定について](#header-0klh5ave3m)
 - [English description](#header-l2widefy0k)
 - [Demo](#header-5xtrgleocc)
-  - [Generate Table of Contents](#header-8ep2tij037)
 - [Milestones](#header-det3zykzms)
   - [ver.0.2](#header-59zf34a3th)
   - [ver.0.3](#header-3sncgpd88v)
@@ -31,38 +26,175 @@
 
 <a name="header-zvtcstfhvq" class="markdown-hopper"></a>
 #### 見出しの一覧機能
-- Markdownファイル内の見出し一覧を表示（ `` ）
+開いているMarkdownファイルの目次（TOC: _Table of Contents_）を表示します。
+
+コマンドは `markdown-hopper:toggle-markdown-toc-view` です。
+
+基本的な操作方法は以下の通りです。
+
+- 下カーソルキー（`core:move-down`）でカーソルを下に移動します。
+- 上カーソルキー（`core:move-up`）でカーソルを上に移動します。
+- Enterキー（`core:confirm`）で、選択している見出し行をエディタで開きます。
+- Escapeキー（`core:cancel`）で、表示している目次を閉じます。
+
+<a name="header-cygwf0w581" class="markdown-hopper"></a>
+##### ヘッダーのレベルによる絞り込み
+入力欄に `#` を複数続けて入力して見出しのレベルを指定することで、
+レベル1から指定したレベルまでの見出しのみを絞り込んで表示します。
+
+文書の大枠の構造を理解したいときに便利です。
+
+<a name="header-tkxqj5pjjx" class="markdown-hopper"></a>
+##### 単語による絞り込み
+入力欄に単語を入力することで、指定した単語を含む見出しを絞り込んで表示します。
+
+各検索結果の中央には、ヒットした見出しが表示されます。
+
+各検索結果の右上部には、ヒットした見出しの上位の見出しが順番に表示されます。
+（より上位のものから順番に、左から表示されます。）
+
+各検索結果の右下部には、ヒットした見出しの行数が表示されます。
+
+<a name="header-wdfp0vllr7" class="markdown-hopper"></a>
+##### Emacsキーバインドに慣れている方へのおまけ
+専用のパッケージを入れている方もいるかもしれませんが、
+一応以下のキーバインドが有効になっています。
+（他のパッケージとのキーバインドの衝突などが発生するため）
+
+| キーバインド |     コマンド     |
+|:------------:|:----------------:|
+|   `ctrl-n`   | `core:move-down` |
+|   `ctrl-p`   |  `core:move-up`  |
+|   `ctrl-m`   |  `core:confirm`  |
+|   `ctrl-g`   |  `core:cancel`   |
 
 <a name="header-dzrw8t2b7w" class="markdown-hopper"></a>
-#### リンク機能
+#### リンク生成機能
 
-<a name="header-ky2ul2m3t9" class="markdown-hopper"></a>
-#### Markdownファイルの見出し行へのアンカー付加機能
-- Markdownファイル内の全ヘッダーへ、アンカーを1コマンドで自動付加
-- カーソル行が属するセクションのヘッダーへ、アンカーを1コマンドで自動付加
+<a name="header-ixwq6ghhh1" class="markdown-hopper"></a>
+##### ファイルへのMarkdownリンク生成機能
+アクティブになっているペインで開いているファイルへのMarkdownリンクを生成することができます。
 
-<a name="header-pli2mfqq42" class="markdown-hopper"></a>
-#### Markdownファイルのリンク付き目次の生成機能
-- Markdownファイルのリンク付き目次を、アンカーを利用して1コマンドで自動生成
-  * あるMarkdownファイルの目次を、他のMarkdownファイルから参照する形でも生成可能
-  * 目次を生成するヘッダーのレベルを指定して生成可能
+この場合には、以下の2つのコマンドを利用します。
 
-<a name="header-tgplipsna0" class="markdown-hopper"></a>
-#### Markdownリンクの生成機能
-- 他のファイルへのMarkdownリンクを、1〜2コマンドで生成
-- アンカーが付加されたヘッダーへのMarkdownリンクを、1〜2コマンドで生成（他のMarkdownファイルのヘッダーも含む）
+- `markdown-hopper:create-link-to-file`
+- `markdown-hopper:paste-link`
 
-<a name="header-pbh5il843j" class="markdown-hopper"></a>
-#### カーソル行の、以下のMarkdownリンクのリンク先への1コマンドでのジャンプ機能
-- 他のファイルへのMarkdownリンク（リンク先がMarkdownである必要はない）
-- 同一Markdownファイル内の、アンカーが付加されたヘッダーへのMarkdownリンク
-- 他のMarkdownファイル内の、アンカーが付加されたヘッダーへのMarkdownリンク
-- ジャンプしたリンク先から、リンク元へ戻る機能
+`create-link-to-file`を実行すると、アクティブになっているペインで開いているファイルの絶対パスがメモリ上に保存されます。
+
+ファイルの絶対パスがメモリ上に保存された状態で、
+別のMarkdownファイル上で`paste-link`を実行すると、
+`create-link-to-file`を実行したファイルへのMarkdownリンクが生成されます。
+
+<a name="header-49a336j14i" class="markdown-hopper"></a>
+###### リンクのパス
+生成されるリンクのパスは、以下の2つの情報をもとに計算した相対パス指定となります。
+
+- `create-link-to-file`を実行したファイルの絶対パス
+- `paste-link`を実行したファイルの絶対パス
+
+<a name="header-js7eey30cm" class="markdown-hopper"></a>
+###### リンクのタイトル
+以下の2つから設定することができます。
+
+- ファイルの最初の見出しをリンクのタイトルとして用いる
+- ファイル名をリンクのタイトルとして用いる
+
+なお、ファイルに見出しが存在しない場合は、自動的にファイル名がリンクのタイトルとして用いられます。
+
+貼り付け直後には、リンクのタイトル部分が選択されている状態になっているため、
+タイトルの変更も最低限のキーストロークで行えます。
+
+<a name="header-whycpbn7v0" class="markdown-hopper"></a>
+###### 画像ファイルへのリンク貼り付け
+`create-link-to-file`を実行したファイルが画像ファイルである場合は、
+貼り付けられるリンク形式も画像ファイルになります。
+
+<a name="header-tupo02yplu" class="markdown-hopper"></a>
+##### 見出しへのリンク生成機能
+Markdownを開いているとき、カーソルがあるセクションの見出しの上に、
+ランダム生成された10文字の文字列を`name`とした`<a>`タグを自動生成することができます。
+（実際には、`name`の値は`header-{ランダム文字列}`の形式になります）
+
+コマンドは`markdown-hopper:create-link-to-header`です。
+
+自動生成した`<a>`タグの情報は、[ファイルへのMarkdownリンク生成機能](#header-ixwq6ghhh1)と同様にメモリ上に保持されます。
+
+この状態で、前述した`paste-link`を実行すると、メモリ上に保持した`<a>`タグの`name`の値の先頭に`#`記号を付加した文字列をリンク先として、
+Markdownリンクが生成されます。
+（リンクのタイトルは見出しと同一の文字列になります。）
+
+この見出しへのMarkdownリンクは、異なるMarkdownファイルであっても、貼り付けることができます。
+その際の振る舞いはファイルへのMarkdownリンク生成機能とほぼ同様ですが、
+リンクのタイトルは`ファイルへのリンクのタイトル | ヘッダーへのリンクのタイトル` という文字列になります。
+
+この生成されたリンクは、MarkdownをHTMLに変換しても期待通りにリンクとして動作します。
+
+<a name="header-nhd8x2pwfh" class="markdown-hopper"></a>
+##### リンクを利用した目次生成機能
+前のセクションで述べた見出しへのリンク生成機能を利用すると、
+Markdownファイルの目次を作成することができます。
+
+1つ1つのセクション毎に`create-link-to-header`と`paste-link`を実行するのは大変なので、
+`markdown-hopper:create-table-of-contents`というコマンドを用意しています。
+このコマンドを実行することで、`create-table-of-contents`を実行したファイルのすべての見出しに対して、
+`create-link-to-header`が実行され、それらの見出しがまとめてメモリ上に保持されます。
+
+メモリ上に保持された目次の情報は、`markdown-hopper:paste-table-of-contents`で、貼り付けることができます。
+貼り付けられる目次は、各見出しのレベルに応じてインデントされたMarkdownリストの形式になっています。
+
+`create-link-to-header`と同様、この機能は異なるファイル間でも利用できるため、
+目次用のファイルを別ファイルとして作成することも可能です。
+
+
+<a name="header-b2q1djv99g" class="markdown-hopper"></a>
+###### 見出しのレベルを指定した目次生成
+`paste-table-of-contents`には、以下のようにほぼ同様の動作をするコマンドがあります。
+
+- `paste-table-of-contents-level-2`: レベル2（`##`）の見出しまでの目次を作成
+- `paste-table-of-contents-level-3`: レベル3（`###`）の見出しまでの目次を作成
+- `paste-table-of-contents-level-4`: レベル4（`####`）の見出しまでの目次を作成
+- `paste-table-of-contents-level-5`: レベル5（`#####`）の見出しまでの目次を作成
+- `paste-table-of-contents-level-6`: レベル6（`######`）の見出しまでの目次を作成
+
+<a name="header-xxkmji34g2" class="markdown-hopper"></a>
+##### Webページのリンク貼り付け機能
+このセクションの他の機能は**ローカルファイルへのリンク**を扱うための機能でしたが、
+OSのクリップボードにURIをコピーした状態で`markdown-hopper:paste-http-link`を利用すると、
+内部でそのURLにリクエストを送り、レスポンスの`head > title`の値を読み込んで、
+Markdownリンクを貼り付けることができます。
+（`https`プロトコルには対応していますが、認証が必要なURLの場合には対応できていません。
+メジャーなサイトであればそのうち対応するかもしれません）
+
+<a name="header-oznz3wf6t9" class="markdown-hopper"></a>
+#### リンクジャンプ機能
+前のセクションまでは**リンクの生成**に関する機能の説明でしたが、
+このセクションでは**リンクのジャンプ**を行うための機能について説明します。
+
+リンク生成の機能ほどは複雑でないため、すぐに理解できると思います。
+
+主に以下の2つのコマンドを使います。
+
+- `markdown-hopper:jump-forward`
+- `markdown-hopper:jump-backward`
+
+`jump-forward`を使うことで、そのカーソル行にMarkdownリンクを含んでいる場合に、そのリンク先をエディタで開くことができます。
+
+また、`jump-backward`を使うことで、`jump-forward`してきた履歴を逆に辿ることができます。
+
+`jump-forward`の履歴は、`markdow-hopper:jump-histories`で見ることができ、ジャンプ元のファイル名・ジャンプ元の行の文字列を対象に、検索を行うこともできます。
+
+なお、リリース直後の時点では、外部のウェブサイトへ`jump-forward`することはできません。
 
 <a name="header-0jhai0cq1b" class="markdown-hopper"></a>
 #### その他のユーティリティ
-- アンカータグやリンク先URIの非表示などの、各種fold機能
-- チェックボックスのtoggle機能
+
+<a name="header-t4axrzg0jo" class="markdown-hopper"></a>
+##### fold機能
+人がMarkdownを読む上で可読性を下げがちな、Markdwonリンクのリンク先URIや、
+このパッケージによって生成されたアンカータグなどをfoldすることができます。
+
+動作については、細かい設定が可能になっています。
 
 <a name="header-nok6mp31cp" class="markdown-hopper"></a>
 ### プレフィックスキーとデフォルトキーバインドの体系
@@ -80,43 +212,43 @@
   - `(Ctrl-c Ctrl-m) o` : ジャンプ後に、リンク元へ戻る
 
 <a name="header-fxnd5cn22h" class="markdown-hopper"></a>
-### コマンドとデフォルトキーバインド
+### コマンドとデフォルトキーバインド一覧
 
-| Commands        | Default Keybinds  | Despcription | Demo links |
-| :------------- | :-------------   | :-------- | :------- |
-| ` ` | ` ` |  |  |
-| `create-table-of-contents` | `(Ctrl-c Ctrl-m) Ctrl-l Ctrl-t` |  | [Demo](#header-5xtrgleocc) |
-| `paste-table-of-contents` | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t` |  | [Demo](#header-2ramzssjsu) |
-| `jump-forward` | `(Ctrl-c Ctrl-m) Ctrl-o` |   |  |
-| `jump-backward` | `(Ctrl-c Ctrl-m) o` |   |  |
-| `create-link-to-file` | `` |   |  |
-| `create-link-to-header` | `` |   |  |
-| `paste-link` | `` |   |  |
-| `create-table-of-contents` | `` |   |  |
-| `paste-table-of-contents`  | `` |   |  |
-| `paste-table-of-contents-level-2` | `` |   |  |
-| `paste-table-of-contents-level-3` | `` |   |  |
-| `paste-table-of-contents-level-4` | `` |   |  |
-| `paste-table-of-contents-level-5` | `` |   |  |
-| `paste-table-of-contents-level-6` | `` |   |  |
-| `paste-http-link` |   |   |  |
-| `toggle-fold` |   |   |  |
-| `toggle-fold-anchors` |   |   |  |
-| `fold-links` |   |   |  |
-| `fold-all` | `` |   |  |
-| `prefomatted-area-utility` | `` |   |  |
-| `create-journal-file` | `` |   |  |
-| `create-meeting-file` | `` |   |  |
-| `create-interview-file` | `` |   |  |
-| `checkbox-utility` | `` |   |  |
-| `show-file-without-focus` | `` |   |  |
+| Commands                          | Default Keybinds                | Despcription | Demo links                 |
+|:----------------------------------|:--------------------------------|:-------------|:---------------------------|
+| ` `                               | ` `                             |              |                            |
+| `create-table-of-contents`        | `(Ctrl-c Ctrl-m) Ctrl-l Ctrl-t` |              | [Demo](#header-5xtrgleocc) |
+| `paste-table-of-contents`         | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t` |              | [Demo](#header-2ramzssjsu) |
+| `jump-forward`                    | `(Ctrl-c Ctrl-m) Ctrl-o`        |              |                            |
+| `jump-backward`                   | `(Ctrl-c Ctrl-m) o`             |              |                            |
+| `create-link-to-file`             | ``                              |              |                            |
+| `create-link-to-header`           | ``                              |              |                            |
+| `paste-link`                      | ``                              |              |                            |
+| `create-table-of-contents`        | ``                              |              |                            |
+| `paste-table-of-contents`         | ``                              |              |                            |
+| `paste-table-of-contents-level-2` | ``                              |              |                            |
+| `paste-table-of-contents-level-3` | ``                              |              |                            |
+| `paste-table-of-contents-level-4` | ``                              |              |                            |
+| `paste-table-of-contents-level-5` | ``                              |              |                            |
+| `paste-table-of-contents-level-6` | ``                              |              |                            |
+| `paste-http-link`                 |                                 |              |                            |
+| `toggle-fold`                     |                                 |              |                            |
+| `toggle-fold-anchors`             |                                 |              |                            |
+| `fold-links`                      |                                 |              |                            |
+| `fold-all`                        | ``                              |              |                            |
+| `prefomatted-area-utility`        | ``                              |              |                            |
+| `create-journal-file`             | ``                              |              |                            |
+| `create-meeting-file`             | ``                              |              |                            |
+| `create-interview-file`           | ``                              |              |                            |
+| `checkbox-utility`                | ``                              |              |                            |
+| `show-file-without-focus`         | ``                              |              |                            |
 
 <a name="header-0klh5ave3m" class="markdown-hopper"></a>
 ### 設定について
 
-| 設定項目 |     |
-| :------------- | :------------- |
-| 通知レベル | 通知をどの程度表示するかを設定できます。初めて使う人には、通知が多い方が良いでしょう。 |
+| 設定項目         |                                                                                        |
+|:-----------------|:---------------------------------------------------------------------------------------|
+| 通知レベル       | 通知をどの程度表示するかを設定できます。初めて使う人には、通知が多い方が良いでしょう。 |
 | リンクのタイトル | 通知をどの程度表示するかを設定できます。初めて使う人には、通知が多い方が良いでしょう。 |
 
 <a name="header-l2widefy0k" class="markdown-hopper"></a>
@@ -126,7 +258,6 @@ Coming soon
 <a name="header-5xtrgleocc" class="markdown-hopper"></a>
 ## Demo
 
-### 見出しの一覧機能
 
 <a name="header-det3zykzms" class="markdown-hopper"></a>
 ## Milestones
