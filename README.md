@@ -30,6 +30,8 @@
 
 コマンドは `markdown-hopper:toggle-markdown-toc-view` です。
 
+![toc-view.gif](toc-view.gif)
+
 基本的な操作方法は以下の通りです。
 
 - 下カーソルキー（`core:move-down`）でカーソルを下に移動します。
