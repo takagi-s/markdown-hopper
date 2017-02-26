@@ -1,9 +1,22 @@
+## 0.1.5
+- README.md
+- Fix bugs
 
-<a name="header-x0m9pl4yyv" class="markdown-hopper"></a>
-## 0.1.0 - First Release (Proto)
+## 0.1.4
+- README.md
+- Fix bugs
+
+## 0.1.3
+- README.md
+- Fix bugs
+
+## 0.1.2
+- README.md
+- Fix bugs
+
+## 0.1.1 - First Release (Proto)
 * TOC Modal (TOC: _Table Of Contents_)
   - Jump to selected section
-  - Fold child sections -> バグってた
   - Search sections
 * Link creation
   - Relative link to FILE / SECTION HEADER
@@ -15,5 +28,3 @@
   - Forward (Jump to relative linked FILE / SECTION HEADER)
   - Backward (Jump to where you have lastly jumped from)
 * Notification
-
-### 0.1.1
