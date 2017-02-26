@@ -216,42 +216,33 @@ Markdownリンクを貼り付けることができます。
 <a name="header-fxnd5cn22h" class="markdown-hopper"></a>
 ### コマンドとデフォルトキーバインド一覧
 
-| Commands                          | Default Keybinds                | Despcription | Demo links                 |
-|:----------------------------------|:--------------------------------|:-------------|:---------------------------|
-| ` `                               | ` `                             |              |                            |
-| `create-table-of-contents`        | `(Ctrl-c Ctrl-m) Ctrl-l Ctrl-t` |              | [Demo](#header-5xtrgleocc) |
-| `paste-table-of-contents`         | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t` |              | [Demo](#header-2ramzssjsu) |
-| `jump-forward`                    | `(Ctrl-c Ctrl-m) Ctrl-o`        |              |                            |
-| `jump-backward`                   | `(Ctrl-c Ctrl-m) o`             |              |                            |
-| `create-link-to-file`             | ``                              |              |                            |
-| `create-link-to-header`           | ``                              |              |                            |
-| `paste-link`                      | ``                              |              |                            |
-| `create-table-of-contents`        | ``                              |              |                            |
-| `paste-table-of-contents`         | ``                              |              |                            |
-| `paste-table-of-contents-level-2` | ``                              |              |                            |
-| `paste-table-of-contents-level-3` | ``                              |              |                            |
-| `paste-table-of-contents-level-4` | ``                              |              |                            |
-| `paste-table-of-contents-level-5` | ``                              |              |                            |
-| `paste-table-of-contents-level-6` | ``                              |              |                            |
-| `paste-http-link`                 |                                 |              |                            |
-| `toggle-fold`                     |                                 |              |                            |
-| `toggle-fold-anchors`             |                                 |              |                            |
-| `fold-links`                      |                                 |              |                            |
-| `fold-all`                        | ``                              |              |                            |
-| `prefomatted-area-utility`        | ``                              |              |                            |
-| `create-journal-file`             | ``                              |              |                            |
-| `create-meeting-file`             | ``                              |              |                            |
-| `create-interview-file`           | ``                              |              |                            |
-| `checkbox-utility`                | ``                              |              |                            |
-| `show-file-without-focus`         | ``                              |              |                            |
+| Commands                          | Default Keybinds                       | Despcription                             | Demo links                 |
+|:----------------------------------|:---------------------------------------|:-----------------------------------------|:---------------------------|
+| `toggle-markdown-toc-view`        | `(Ctrl-c Ctrl-m) Ctrl-t`               | Show **T**oC                             |                            |
+| `create-link-to-file`             | `(Ctrl-c Ctrl-m) Ctrl-l Ctrl-f`        | Register **L**ink to the **F**ile        |                            |
+| `create-link-to-header`           | `(Ctrl-c Ctrl-m) Ctrl-l Ctrl-h`        | Register **L** to the **H**eader         |                            |
+| `paste-link`                      | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-l`        | **P**aste registered **L**ocal link      |                            |
+| `paste-http-link`                 | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-p`        | **P**aste **P**ublic link from clipboard |                            |
+| `create-table-of-contents`        | `(Ctrl-c Ctrl-m) Ctrl-l Ctrl-t`        | Register **L**inks of TOC to memroy      | [Demo](#header-5xtrgleocc) |
+| `paste-table-of-contents`         | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t Ctrl-t` | **P**aste registered **T**OC             | [Demo](#header-2ramzssjsu) |
+| `paste-table-of-contents-level-2` | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t 2`      |                                          |                            |
+| `paste-table-of-contents-level-3` | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t 3`      |                                          |                            |
+| `paste-table-of-contents-level-4` | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t 4`      |                                          |                            |
+| `paste-table-of-contents-level-5` | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t 5`      |                                          |                            |
+| `paste-table-of-contents-level-6` | `(Ctrl-c Ctrl-m) Ctrl-p Ctrl-t 6`      |                                          |                            |
+| `jump-forward`                    | `(Ctrl-c Ctrl-m) Ctrl-o`               | **O**pen link                            |                            |
+| `jump-backward`                   | `(Ctrl-c Ctrl-m) o`                    | **O**pen previous                        |                            |
+| `toggle-fold`                     |                                        |                                          |                            |
+| `toggle-fold-anchors`             |                                        |                                          |                            |
+| `fold-links`                      |                                        |                                          |                            |
+| `fold-all`                        | `(Ctrl-c Ctrl-m) Ctrl-f Ctrl-f`        |                                          |                            |
 
 <a name="header-0klh5ave3m" class="markdown-hopper"></a>
 ### 設定について
 
-| 設定項目         |                                                                                        |
-|:-----------------|:---------------------------------------------------------------------------------------|
-| 通知レベル       | 通知をどの程度表示するかを設定できます。初めて使う人には、通知が多い方が良いでしょう。 |
-| リンクのタイトル | 通知をどの程度表示するかを設定できます。初めて使う人には、通知が多い方が良いでしょう。 |
+| 設定項目   |                                                                                        |
+|:-----------|:---------------------------------------------------------------------------------------|
+| 通知レベル | 通知をどの程度表示するかを設定できます。初めて使う人には、通知が多い方が良いでしょう。 |
 
 <a name="header-l2widefy0k" class="markdown-hopper"></a>
 ## English description
