@@ -266,7 +266,11 @@ Coming soon
 * 登録したリンク一覧からリンクをペースト
 * 辿ってきたリンクの一覧表示
 * 辿ってきたリンク一覧からリンクに飛ぶ
+* 単語絞り込み時の、祖先のヘッダを含めた検索
+* Page up, Page down
+* Go to beginning, Go to ending
 
 <a name="header-g7nbvr5tmp" class="markdown-hopper"></a>
 ### ver.0.4
 * Markdown Previewのリンクをクリックした際に、相対パスを辿ってプレビューできるようにする
+* スタイルの修正
