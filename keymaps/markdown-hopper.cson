@@ -34,6 +34,6 @@
     'ctrl-n': 'core:move-down'
     'ctrl-p': 'core:move-up'
     'ctrl-g': 'core:cancel'
-    "ctrl-i": "markdown-hopper:toc-view-fold-header",
+    "ctrl-i": "markdown-hopper:toc-view-fold-header"
   }
 }

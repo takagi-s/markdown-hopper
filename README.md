@@ -30,7 +30,7 @@
 
 コマンドは `markdown-hopper:toggle-markdown-toc-view` です。
 
-![toc-view.gif](toc-view.gif)
+![toc-view.gif](http://i.imgur.com/9CPfnlR.gif)
 
 基本的な操作方法は以下の通りです。
 
