@@ -1,7 +1,7 @@
 {
   "name": "markdown-hopper",
   "main": "./lib/markdown-hopper",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A utility package for Markdown files.",
   "keywords": [],
   "activationCommands": {},
