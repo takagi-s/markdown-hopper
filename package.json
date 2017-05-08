@@ -1,11 +1,10 @@
 {
   "name": "markdown-hopper",
   "main": "./lib/markdown-hopper",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "description": "A utility package for Markdown files.",
   "keywords": [],
-  "activationCommands": {
-  },
+  "activationCommands": {},
   "repository": "https://github.com/takagi-s/markdown-hopper",
   "license": "MIT",
   "engines": {
